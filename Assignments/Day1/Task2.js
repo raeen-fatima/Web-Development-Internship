@@ -6,15 +6,29 @@
 // multiply
 // divide
 
-const add = (num1 , num2) => {
-    return (num1 + num2);
+
+const calculator = (num1, num2, operation) => {
+    switch (operation) {
+        case "add":
+            return num1 + num2;
+        
+        case "subtract":
+            return num1 - num2;
+
+        case "multiply":
+            return num1 * num2;
+
+        case "divide":
+            return num1 / num2;
+    
+        default:
+            return "invalid operation"
+            break;
+    }
 }
 
-const subtract = (num1, num2) => num1 - num2;
-const multiply = (num1, num2) => num1 * num2;
-const divide  = (num1 , num2) => num1 / num2;
 
-console.log(add(2,4));
-console.log(subtract(6,3));
-console.log(multiply(3,5));
-console.log(divide(25,5));
+console.log("Addition: ",calculator(2,4,"add"));
+console.log("Subtract: ",calculator(6,3,"subtract"));
+console.log("Multiply: ", calculator(3,5,"multiply"));
+console.log("Divide: ", calculator(25,5,"divide"));
