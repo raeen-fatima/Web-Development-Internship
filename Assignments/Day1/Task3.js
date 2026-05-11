@@ -37,7 +37,10 @@ for (let i = 0; i < 3; i++) {
   if(totalMarks > highestMarks ){
     highestMarks = totalMarks;
     topper = students[i].name;
+   
   }
 
   console.log("Total Marks of", students[i].name,":" ,totalMarks,"Average Marks of", students[i].name,":",averageMarks);
-  console.log("Topper Student:", topper);}
+ 
+}
+ console.log("Topper Student:", topper, "with highest Marks:",highestMarks);
