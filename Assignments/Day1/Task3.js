@@ -1,25 +1,43 @@
-// Task 3
-// Create student objects and:
-// Calculate average marks
-// Print topper student
+// // Task 3
+// // Create student objects and:
+// // Calculate average marks
+// // Print topper student
 
-const Students = [
-    
-    { id: 1, name: "Nisha", Age: 20, marks:340},
-    { id: 2, name: "Teena", age: 20, marks: 440 },
-    { id: 3, name: "Riya", age: 21, marks: 250},
-    { id: 4, name: "Neha", age: 24, marks: 480 },
-    { id: 5, name: "Sara", age: 23, marks: 100 },
-    { id: 6, name: "naina", age: 24, marks: 200 }
-    
-]
 
-const totalMarks = Students.reduce((sum,student)=>{
-    return sum + student.marks;
-},0);
+const students = [
+  {
+    id: 1,
+    name: "Riya",
+    marks: [92, 95, 89],
+  },
+  {
+    id: 2,
+    name: "Neha",
+    marks: [89, 92, 79],
+  },
+  {
+    id: 3,
+    name: "Mehak",
+    marks: [67, 79, 92],
+  },
+];
 
-const AverageMarks = totalMarks / Students.length;
-console.log("Average Marks: ", AverageMarks);
+let highestMarks = 0;
+let topper = "";
 
-const topperStudents = Students.filter(student => student.marks > 400);
-console.log("Topper Students:", topperStudents);
+for (let i = 0; i < 3; i++) {
+  const number = students[i].marks;
+
+  const totalMarks = number.reduce((sum, student) => {
+    return sum + student;
+  }, 0);
+
+  const averageMarks = totalMarks/students[i].marks.length;
+
+  if(totalMarks > highestMarks ){
+    highestMarks = totalMarks;
+    topper = students[i].name;
+  }
+
+  console.log("Total Marks of", students[i].name,":" ,totalMarks,"Average Marks of", students[i].name,":",averageMarks);
+  console.log("Topper Student:", topper);}
